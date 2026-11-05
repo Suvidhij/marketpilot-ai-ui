@@ -1,5 +1,7 @@
 # MarketPilot AI — UI
 
+[Open the live interactive preview](https://marketpilot-ai-preview-f6k2.funnyflask4.chatgpt.site) — sample data stays in your browser. Real accounts, Python, OpenAI, and n8n are not connected to this preview. See [preview instructions](docs/free-preview.md).
+
 Next.js, React, TypeScript, and Tailwind CSS interface for the MarketPilot AI backend. Includes landing, signup/login, a protected dashboard, clients, market intelligence, content, campaigns, leads, reports, AI assistant, automation approvals, and account settings.
 
 ## A. What are we building?

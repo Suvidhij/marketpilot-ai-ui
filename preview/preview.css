@@ -1,0 +1,115 @@
+body {
+  --preview-height: 52px;
+}
+.preview-banner {
+  height: var(--preview-height);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #193c35;
+  color: #f6faec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 28px;
+  font:
+    11px Arial,
+    Helvetica,
+    sans-serif;
+  border-bottom: 1px solid #406050;
+}
+.preview-banner > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.preview-banner strong {
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  color: #d7f27b;
+  white-space: nowrap;
+}
+.preview-banner span {
+  color: #c9d7bf;
+  font-size: 10px;
+}
+.preview-banner a {
+  font-size: 10px;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.preview-banner button {
+  font: inherit;
+  font-size: 10px;
+  color: #e6efd9;
+  border: 1px solid #668161;
+  padding: 7px 10px;
+  border-radius: 5px;
+  background: transparent;
+  white-space: nowrap;
+}
+.sidebar {
+  top: var(--preview-height);
+  height: calc(100dvh - var(--preview-height));
+}
+.workspace-content {
+  min-height: calc(100vh - 135px - var(--preview-height));
+}
+.preview-mode .settings-grid > .panel:nth-child(2) form {
+  display: none;
+}
+.preview-mode .settings-grid > .panel:nth-child(2)::after {
+  content: "Passwords are disabled in this preview. Real account security is handled by the production Python backend.";
+  display: block;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #63736a;
+  margin-top: 20px;
+}
+.skip:focus {
+  top: var(--preview-height);
+}
+@media (max-width: 800px) {
+  body {
+    --preview-height: 78px;
+  }
+  .preview-banner {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+  .preview-banner > div:first-child {
+    display: block;
+  }
+  .preview-banner strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .preview-banner span {
+    font-size: 9px;
+    line-height: 1.5;
+    display: block;
+    max-width: 245px;
+  }
+  .preview-banner > div:last-child {
+    gap: 9px;
+    flex-direction: column;
+  }
+  .preview-banner a,
+  .preview-banner button {
+    font-size: 9px;
+  }
+  .workspace-header {
+    top: var(--preview-height);
+  }
+  .sidebar {
+    top: calc(70px + var(--preview-height));
+    height: calc(100dvh - 70px - var(--preview-height));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
