@@ -1,1 +1,5 @@
-export interface HealthResponse { status: "ok"; service: string; version: string; }
+export interface HealthResponse {
+  status: "ok";
+  service: string;
+  version: string;
+}
