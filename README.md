@@ -13,6 +13,20 @@ The UI turns client context, metrics, records, reports, and human approvals into
 ## C. How it works
 The browser calls the same-origin `/api/backend/*` proxy. The proxy talks to FastAPI using a server-only backend URL and forwards a scoped HttpOnly session cookie. Both the server layout and backend protect authenticated work. No login token is stored in localStorage and no OpenAI key is sent to the browser.
 
+## Windows quick start
+
+Open PowerShell in this repository and run:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-UI.ps1
+```
+
+This process-only policy setting handles Windows script restrictions without changing the saved execution policy. The script works from any current directory, preserves existing environment files, and installs dependencies when needed. First-time setup needs internet access. It requires Node.js 24 or newer LTS and starts Next.js on port 3000. Start the backend in a separate PowerShell window first. Leave the window open and press **Ctrl+C** to stop.
+
+To prepare dependencies without starting the server, add `-SetupOnly`. To repair dependency installation, add `-ReinstallDependencies`. These switches go after the script filename. If port 3000 is busy, stop the existing server first; the script does not silently switch ports. Existing configuration is retained, so keep the local UI address set to `http://localhost:3000` in both projects. Back up a populated database before applying future schema changes.
+
+The scripts use Windows PowerShell 5.1-compatible syntax. Windows CI parses them with both Windows PowerShell and PowerShell 7; this Linux workspace cannot run the Windows server commands.
+
 ## D–E. Run
 Use Node.js 24 LTS. Clone this and `marketpilot-ai-backend` side by side. From this repository:
 
